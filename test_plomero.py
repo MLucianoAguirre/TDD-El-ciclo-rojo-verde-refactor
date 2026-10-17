@@ -15,3 +15,6 @@ def test_trabajo_el_mismo_dia_no_cobra_visita():
 
 def test_zona_centrica_fin_de_semana_sin_trabajo():
     assert calcular_visita("centrica", False, True) == 12000
+
+def test_trabajo_el_mismo_dia_fin_de_semana():
+    assert calcular_visita("centrica", True, True) == 0

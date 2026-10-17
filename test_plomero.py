@@ -1,3 +1,4 @@
+import pytest
 from plomero import calcular_visita
 
 def test_zona_centrica_dia_semana_sin_trabajo():
@@ -18,3 +19,7 @@ def test_zona_centrica_fin_de_semana_sin_trabajo():
 
 def test_trabajo_el_mismo_dia_fin_de_semana():
     assert calcular_visita("centrica", True, True) == 0
+
+def test_zona_invalida_lanza_error():
+    with pytest.raises(ValueError):
+        calcular_visita("invalida", False, False)
